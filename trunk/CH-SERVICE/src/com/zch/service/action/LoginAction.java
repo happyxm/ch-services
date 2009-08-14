@@ -5,8 +5,11 @@ package com.zch.service.action;
 
 /**
  * 
- * @Author Ö£²Åº£
- * @Date 2009-6-23
+ * @author zhengcaihai
+ * <li>Email:zhengcaihai529@126.com
+ * <li>Phone:+8613860604117
+ * @date 2009-8-14
+ * @version 1.0
  */
 public class LoginAction{
 	public String login() {
