@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="com.genuitec.eclipse.j2eedt.core.J2EE14_CONTAINER"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/standard.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/java/lib/jsf-impl.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/java/lib/jsf-api.jar"/>
+	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.jsf.MYECLIPSE_FACELETS1"/>
+	<classpathentry kind="output" path="web/WEB-INF/classes"/>
+</classpath>
