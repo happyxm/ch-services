@@ -1,8 +1,12 @@
 #summary JSF基础知识讨论
 = JSF基础知识=
 
-Add your content here.
-
+|| *Year* || *Temperature (low)* || *Temperature (high)* || 
+|| 1900 || -10 || 25 || 
+|| 1910 || -15 || 30 || 
+|| 1920 || -10 || 32 || 
+|| 1930 || _N/A_ || _N/A_ || 
+|| 1940 || -2 || 40 ||
 
 = Details =
 
