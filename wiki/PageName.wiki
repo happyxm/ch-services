@@ -16,6 +16,6 @@ Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
-<wiki:gadget url="https://www.google.com/" border="0" up_content="root3x + x^phi + x_1"/> 
+<wiki:gadget url="http://www.google.com/" border="0" up_content=""/> 
 
 http://code.google.com/p/ch-services/logo?logo_id=1272523397
