@@ -1,7 +1,5 @@
-#summary One-sentence summary of this page.
-#labels Featured
-
-= Introduction =
+#summary JSF基础知识讨论
+= JSF基础知识=
 
 Add your content here.
 
