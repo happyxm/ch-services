@@ -1,0 +1,46 @@
+<facelet-taglib xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facelettaglibrary_2_0.xsd"
+	version="2.0">
+	<namespace>http://www.ch-service.com/jsf/chfaces</namespace>
+	<tag>
+		<tag-name>datagrid</tag-name>
+		<description><![CDATA[data grid]]></description>
+		<component>
+			<component-type>com.chfaces.HtmlDataGrid</component-type>
+			<renderer-type>com.chfaces.HtmlDataGridRenderer</renderer-type>
+		</component>
+	</tag>
+	<tag>
+		<tag-name>select</tag-name>
+		<description><![CDATA[select]]></description>
+		<component>
+			<component-type>com.chfaces.HtmlSelectOneListbox</component-type>
+			<renderer-type>com.chfaces.HtmlSelectOneListboxRenderer</renderer-type>
+		</component>
+	</tag>
+	<tag>
+		<tag-name>radio</tag-name>
+		<description><![CDATA[radio]]></description>
+		<component>
+			<component-type>com.chfaces.HtmlSelectOneRadio</component-type>
+			<renderer-type>com.chfaces.HtmlSelectOneRadioRenderer</renderer-type>
+		</component>
+	</tag>
+	<tag>
+		<tag-name>upload</tag-name>
+		<description><![CDATA[upload simple file]]></description>
+		<component>
+			<component-type>com.chfaces.HtmlFileUploader</component-type>
+			<renderer-type>com.chfaces.FileUploaderRenderer</renderer-type>
+		</component>
+	</tag>
+	<tag>
+		<tag-name>datepicker</tag-name>
+		<description><![CDATA[datepicker]]></description>
+		<component>
+			<component-type>com.chfaces.HtmlDatePicker</component-type>
+			<renderer-type>com.chfaces.DatePickerRenderer</renderer-type>
+		</component>
+	</tag>
+</facelet-taglib>

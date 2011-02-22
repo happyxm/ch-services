@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ch="http://www.ch-service.com/jsf/chfaces"
+	xmlns:my="http://www.ch-service.com/jsf/extends"> 
+	<my:head> 
+		<title></title> 
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+		<script type="text/javascript">
+		//<![CDATA[
+		//]]>
+		</script>
+	</my:head> 
+	<body style="overflow:auto;"> 
+			<h:form prependId="false">
+				<div style="padding:1px 2px;border-bottom: 1px solid #8ac;">
+					<a href="#" onclick="javascript:$('#newDialog').dialog('open');">起草正文</a>
+				</div>
+				<div style="padding:1px 2px;border-bottom: 1px solid #8ac;">
+					当前流程：<span class="redfont">党组发文</span>  | 当前状态：<span class="redfont">起草人拟稿</span>  | 当前用户：<span class="redfont">周晓</span>   | 所在部门：<span class="redfont">办公厅</span> 
+				</div>
+				
+				<table>
+					<tr>
+						<td align="left" width="10%"><label for="type">#{rss.dispatch_type}:</label></td>
+						<td align="left" width="90%" colspan="5"><ch:select id="type" metaGroup="DISPATCH_TYPE" value="#{sendDocumentBean.dispatch.type}" ></ch:select></td>
+					</tr>
+				</table>
+				<fieldset style="width:98%;top:2px;border: 1px solid #8ac;">
+					<legend>
+						公文信息
+					</legend>
+					<table>
+						<tbody>
+							<tr>
+								<td align="left" width="15%"><label for="title"><span class="redfont">*</span>#{rss.dispatch_title}</label>:</td>
+								<td align="left" width="80%" colspan="5"><h:inputText id="title" value="#{sendDocumentBean.dispatch.title}" size="50" styleClass="{required:true}" maxlength="100"/></td>
+							</tr>
+							<tr>
+								<td align="left" width="15%"><label for="themeWord">#{rss.dispatch_themeWord}:</label></td>
+								<td align="left" width="80%" colspan="5"><h:inputText id="themeWord" value="#{sendDocumentBean.dispatch.themeWord}"/></td>
+							</tr>
+							<tr>
+								<td align="left" width="15%"><label for="classification">#{rss.dispatch_classification}:</label></td>
+								<td align="left" width="30%"><ch:select id="classification" metaGroup="DISPATCH_CLASSIFICATION" value="#{sendDocumentBean.dispatch.classification}" ></ch:select></td>
+								<td align="left" width="15%"><label for="fileWord">#{rss.dispatch_fileWord}:</label></td>
+								<td align="left" width="30%" colspan="3"><h:inputText id="fileWord" value="#{sendDocumentBean.dispatch.fileWord}"/></td>
+							</tr>
+							<tr>
+								<td align="left" width="15%"><label for="secrecyLevel">#{rss.dispatch_secrecyLevel}:</label></td>
+								<td align="left" width="30%"><ch:select id="secrecyLevel" metaGroup="SECRECY_LEVEL" value="#{sendDocumentBean.dispatch.secrecyLevel}" ></ch:select></td>
+								<td align="left" width="15%"><label for="secrecyTerm">#{rss.dispatch_secrecyTerm}:</label></td>
+								<td align="left" width="30%" colspan="3">
+									<ch:select id="secrecyTerm" metaGroup="SECRECY_TERM" value="#{sendDocumentBean.dispatch.secrecyTerm}" ></ch:select>
+								</td>
+							</tr>
+							<tr>
+								<td align="left" width="15%"><label for="materialityLevel">#{rss.dispatch_materialityLevel}:</label></td>
+								<td align="left" width="30%"><ch:select id="materialityLevel" metaGroup="MATERIALITY_LEVEL" value="#{sendDocumentBean.dispatch.materialityLevel}" ></ch:select></td>
+								<td align="left" width="15%"><label for="emergencyLevel">#{rss.dispatch_emergencyLevel}:</label></td>
+								<td align="left" width="30%"  colspan="3"><ch:select id="emergencyLevel" metaGroup="EMERGENCY_LEVEL" value="#{sendDocumentBean.dispatch.emergencyLevel}" ></ch:select></td>
+							</tr>
+							<tr>
+								<td align="left" width="15%"><label for="carbonCopy">#{rss.dispatch_carbonCopy}:</label></td>
+								<td align="left" width="80%" colspan="5"><h:inputText id="carbonCopy" value="#{sendDocumentBean.dispatch.carbonCopy}" ></h:inputText></td>
+							</tr>
+							<tr>
+								<td align="left" width="15%">#{rss.attach}:</td>
+								<td align="left" width="80%" colspan="5"></td>
+							</tr>
+							<tr>
+								<td align="left" width="15%"><label for="remark">#{rss.dispatch_remark}:</label></td>
+								<td align="left" width="80%" colspan="5"><h:inputTextarea id="remark" value="#{sendDocumentBean.dispatch.remark}" rows="2" cols="50"></h:inputTextarea></td>
+							</tr>
+						</tbody>
+					</table>
+				</fieldset>
+				
+				<div align="center">
+					<div style="margin-top:5px;">
+						<my:button id="save" value="#{rss.button_SAVE}" icon="ui-icon-disk" 
+		            			buttonListener="#{sendDocumentBean.saveListener}"  target="datagrid" 
+		            			ajaxSubmit="true" wrapper="div" tabindex="5" validate="true" />
+		            	<my:button id="close" value="#{rss.button_CANCEL}" icon="ui-icon-close" 
+		            			type="button" onclick="javascript:$('#newDoc').dialog('close');"/>
+	            	</div>
+            	</div>
+			</h:form>  
+	</body> 
+</html> 
