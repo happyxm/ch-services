@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ch="http://www.ch-service.com/jsf/chfaces"
+	xmlns:my="http://www.ch-service.com/jsf/extends"> 
+	<my:head> 
+		<title></title> 
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+		<script type="text/javascript">
+		//<![CDATA[
+			function afterSelectRow(){
+				$("#add,#delete,#update").removeAttr('disabled').removeClass('ui-state-disabled');
+				//$("#save").attr('disabled','disabled').addClass('ui-state-disabled');
+			}
+		//]]>
+		</script>
+	</my:head> 
+	<my:body> 
+			<h:form prependId="false">
+				<table width="98%">
+					<tr>
+						<td colspan="2" width="98%" align="right"  style="border-bottom: 1px solid #ccc;">
+							<div style="margin-bottom:5px;margin-top:5px;margin-right:5px;">
+			            		<my:button id="delete" value="#{rss.button_DELETE}" icon="ui-icon-trash" actionListener="#{sendDocumentBean.deleteListener}"
+			            				   ajaxSubmit="true"  tabindex="5" validate="true" disabled="false"/>
+			            		<my:button id="update" value="#{rss.button_UPDATE}" icon="ui-icon-document" type="button" 
+			            				   disabled="true" onclick="javascript:$('#newDoc').dialog('open');"/>
+			            	</div>
+						</td>
+					</tr>
+				</table>
+				<ch:datagrid id="datagrid" 
+					multiselect="false"
+					selectTarget="newDocDiv"
+					postParams=""
+					afterSelectRow="afterSelectRow"
+					value="CH-COA-DISPATCH" 
+					selectListener="#{sendDocumentBean.selectListener}" 
+					actionListener="#{sendDocumentBean.getDispatchList}">
+				</ch:datagrid>
+			</h:form>  
+	</my:body> 
+</html> 

@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:my="http://www.ch-service.com/jsf/extends">
+	<my:head>
+		<title>CH-SERVICE 系统登录</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<h:outputStylesheet library="css/platform" name="login.css" target="head" />
+	</my:head>
+	<my:body>
+		<table cellspacing="0" cellpadding="0" width="100%" style="height:100%">
+				<tr>
+					<td valign="top" class="cssFooterRight">
+						<div class="cssWLGradientCommon cssWLGradientIMG" style="background-image: url(/CH-SERVICE/resources/default/images/login/wave3header.jpg);">
+							<br/>
+							<a class="cssFooterRightA" id="mainpage" name="mainpage" href="javascript:void;">设为主页</a>
+							<a class="cssFooterRightA" id="collection" href="javascript:void;">收藏本页</a>
+							<a class="cssLastFooterRightA" id="logonConfig" href="#">登录设置</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" valign="middle">
+						<table id="ctTBL" cellspacing="0" cellpadding="0"  border="0">
+							<tbody>
+								<tr>
+									<td colspan="3" class="topTD" valign="bottom" align="left">
+										<img  class="cssLogo" title="CH-SERVICE" height="43"
+											alt="CH-SERVICE" src="/CH-SERVICE/resources/default/images/login/WindowsLive2.png"
+											width="145" />
+									</td>
+								</tr>
+								<tr>
+									<td id="ValProp" colspan="3"  align="left">
+										<br />
+										建立所有业务系统开发和集成的平台，整个过程不断改进和优化结构，使建立在此基础上的系统能进行快速的开发和集成。
+									</td>
+								</tr>
+								<tr>
+									<td id="leftTD" style="width: 305px; margin-top: 0px">
+										<ul>
+											<li  style="margin-left:1px;text-align:left">使用领先技术的架构服务平台及提供安全保护。
+											</li>
+											<li style="margin-left:1px;text-align:left">集成您常用的业务系统服务集于一体。
+											</li>
+											<li style="margin-left:1px;text-align:left">海量数据处理，数据备份功能，确保您的数据安全。
+											</li>
+										</ul>
+									</td>
+									<td id="rightTD" align="left">
+										<h1>系统登录</h1>
+										<h:form id="loginForm" prependId="false">
+											<table width="350px;" cellspacing="8px;">
+													<tr>
+														<td>
+															#{rss.userCode}：
+															<h:inputText id="userCode" value="#{loginAction.userCode}" maxlength="20" size="30" tabindex="1" styleClass="required"/>
+														</td>
+													</tr>
+													<tr>
+														<td>
+															#{rss.password}：
+															<h:inputSecret id="password" value="#{loginAction.password}" maxlength="16" size="30" tabindex="2" styleClass="required">
+																<f:validateLength minimum="8"></f:validateLength>
+															</h:inputSecret>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="1"  align="left">
+															<input class="cssCheckbox" id="remMe"
+																onclick="" type="checkbox" value="1"
+																name="remMe" />
+																<label for="remMe">
+																	在此计算机上保留我的登录信息
+																</label>
+														</td>
+													</tr>
+													<tr>
+														<td >
+															<my:button id="login" value="#{rss.button_LOGIN}"   icon="ui-icon-suitcase" ajaxSubmit="false" target="message"/>
+																
+															<my:ajaxStatus>
+																<f:facet name="start">
+																	<div class="ui-widget ui-autocomplete ui-autocomplete-loading">&#160; &#160; &#160;</div>
+																</f:facet>
+																<f:facet name="error">
+																	<h:outputText value="Ajax Error" />
+																</f:facet>
+																<f:facet name="complete">
+																	<h:outputText id="message" style="color:red" value="#{loginAction.message}" />
+																</f:facet>
+															</my:ajaxStatus>
+														</td>
+													</tr>
+											</table>
+										</h:form>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td class="cssFooterPadding" valign="top" align="center">
+						<table cellspacing="0" cellpadding="0" border="0" width="80%" >
+							<tbody>
+								<tr> 
+									<td class="cssFooterLeft" style="border-top: 1px solid #CDDDF4;padding-top:5px;">
+										©2010 CH-SERVICE
+										<a id="ftrAbout" href="#">关于</a>
+										<a id="ftrPrivacy" href="#">许可声明</a>
+										<a id="portal" href="#">公司门户</a>
+									</td>
+									<td class="cssFooterRight" style="border-top: 1px solid #CDDDF4;padding-top:5px;">
+										<a class="cssFooterRightA" id="ftrAcct" href="#">管理中心</a>
+										<a class="cssFooterRightA" id="ftrHelp" href="#">帮助中心</a>
+										<a class="cssLastFooterRightA" id="ftrFdbk" href="#">使用反馈</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+		</table>
+		<script type="text/javascript">
+		//<![CDATA[
+			var CS_index = {
+				collectionPage : function() {
+					var url = location.href;
+					url = url.substring(0, url.lastIndexOf("/") + 1);
+					if (document.all) {// IE
+						window.external.addFavorite(url, document.title);
+					} else if (window.sidebar) {
+						window.sidebar.addPanel(document.title, url, "");
+					}else{
+				    	alert("您的浏览器不支持收藏本页");
+				    }
+					return false;
+				},
+				mainPage:function(){
+					var url=location.href;
+					url=url.substring(0,url.lastIndexOf("/"));
+					url=url.substring(0,url.lastIndexOf("/"));
+					if (document.all){//IE
+						this.style.behavior="url(#default#homepage)";
+						this.setHomePage(url);
+				    }else if (window.sidebar){//firefox
+				    	if(window.netscape){
+					    	try{
+					    		netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+					    	}catch(e){
+					    		alert( "您的浏览器不支持设置主页，请在URL输入about:config回车，设置signed.applets.codebase_principal_support=true" ); 
+					    	}
+				    	}
+				    	var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components. interfaces.nsIPrefBranch);
+				        prefs.setCharPref('browser.startup.homepage',url);
+				    }else{
+				    	alert("您的浏览器不支持设置主页");
+				    }
+					return false;
+				},
+				login:function(){
+					window.location.href="/CH-SERVICE/views/platform/system/main/main.xhtml";
+				}
+			}
+			//set collection
+			$('#collection').click(CS_index.collectionPage);
+			//set main page
+			$('#mainpage').click(CS_index.mainPage);
+			document.getElementById("userCode").focus();
+		//]]>
+		</script>
+	</my:body>
+</html>
