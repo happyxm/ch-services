@@ -1,4 +1,4 @@
-#labels Phase-Design,WebUI,Jquery
+#labels Phase-Design,Featured,Phase-Support
 = ChService界面介绍 =
 
 本界面设计主要考虑以下几点原则：
